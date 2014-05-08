@@ -4,73 +4,41 @@
  * and open the template in the editor.
  */
 
-package wordscramble.cit260;
+package wordscramble5;
 
 import java.io.Serializable;
+import java.util.Scanner;
 
-public class WordscrambleCit260 implements Serializable {
+public class WordScramble5 implements Serializable {
 
-    public static void main(String[] args) {
-        // TODO code application logic here
+    //Instance Variables
+    String name;
+    String instructions= "Word Scramble\n"
+            +"Number of players: one\n" 
+    +"Game: Players pick how many letters they want to have in their game word \n"
+	+"and the system picks a word from an internal list and randomizes the letters.\n "
+            + " The player has 3 chances to guess the right word.\n" 
+	+"The goal of the game: Guess the right word in three chances.\n" 
+	+"Game Rules:\n"
+	+"1. Can only select from a predetermined number of letter limits (3, 4, 5, 6)\n"
+	+"2. Can only enter one guess per try. \n";
+    
+    public static void main(String[] args){
+       WordScramble5 myGame= new WordScramble5();
+       myGame.getName();
+       myGame.displayHelp();
     }
     
-    private String name;
-    private String instructions=
-            "";
-    private long wins=0;
-    private long losses=0;
-    private long ties=0;
-    private String letter="";
-  
-    public WordscrambleCit260() {
+    public void getName(){
+        Scanner input= new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        this.name= input.next();
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getInstructions() {
-        return instructions;
-    }
-
-    public void setInstructions(String instructions) {
-        this.instructions = instructions;
-    }
-
-    public long getWins() {
-        return wins;
-    }
-
-    public void setWins(long wins) {
-        this.wins = wins;
-    }
-
-    public long getLosses() {
-        return losses;
-    }
-
-    public void setLosses(long losses) {
-        this.losses = losses;
-    }
-
-    public long getTies() {
-        return ties;
-    }
-
-    public void setTies(long ties) {
-        this.ties = ties;
-    }
-
-    public String getLetter() {
-        return letter;
-    }
-
-    public void setLetter(String letter) {
-        this.letter = letter;
-    }
-    
+        
+    public void displayHelp(){
+         System.out.println("\n Welcome " + this.name + "\n");
+         System.out.println(this.instructions);
+     }
 }
+   
+
